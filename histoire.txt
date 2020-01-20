@@ -1,18 +1,21 @@
 // node 1
 
-A pale light creeps through the shaders of your bedroom.
-You take some time to process this piece of information.
-Your body lies between a matress and some sheets. 
-Your head rests on a soft but somewhat smelly pillow.
-You are waking up.
+
+'1.1a' A pale light creeps through the shaders. option: "..."
+'1.1b' Your body lies between a matress and some sheets. option: "..."
+'1.1c' You are in your bedroom. option: "..."
+'1.1d' Your head rests on a soft but somewhat smelly pillow. option: "..."
+'1.1e' It's morning.
+       You are waking up.
+       options : assess the situation -> '1.2'
+       options : get up, drink a glass of water, do some calithenics, meditate for ten minutes, eat a consistent breakfast, and get ready to go to work. [-> 1.2a]
 
 
-// choice 1.
 // 1.1. assess the situation [-> 1.1]
-// 1.2. get up, drink a glass of water, do some calithenics, meditate for ten minutes, eat a consistent breakfast, and get ready to go to work. [-> 1.2]
+// 1.2. 
 
  
-[1.2]
+[1.2a]
 You contemplate the possibility of getting up, drinking a glass of water, then doing some calisthenics, meditating for ten minutes, eating a consistent breakfast and getting reday to go to work. It sounds like a good plan. A great one actually. But you gradually remember that you haven't done your dishes in the last four days, and since you went to bed way too late yesterday in the evening, you have a bare fourty minutes to get ready before being late for work.
 // gain thought: bettering your life [-> 1.1.]
  
