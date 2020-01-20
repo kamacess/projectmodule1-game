@@ -1,0 +1,46 @@
+// node 1
+
+A pale light creeps through the shaders of your bedroom.
+You take some time to process this piece of information.
+Your body lies between a matress and some sheets. 
+Your head rests on a soft but somewhat smelly pillow.
+You are waking up.
+
+
+// choice 1.
+// 1.1. assess the situation [-> 1.1]
+// 1.2. get up, drink a glass of water, do some calithenics, meditate for ten minutes, eat a consistent breakfast, and get ready to go to work. [-> 1.2]
+
+ 
+[1.2]
+You contemplate the possibility of getting up, drinking a glass of water, then doing some calisthenics, meditating for ten minutes, eating a consistent breakfast and getting reday to go to work. It sounds like a good plan. A great one actually. But you gradually remember that you haven't done your dishes in the last four days, and since you went to bed way too late yesterday in the evening, you have a bare fourty minutes to get ready before being late for work.
+// gain thought: bettering your life [-> 1.1.]
+ 
+[1.1.]
+You feel like a mess.
+Your brain feels foggy. 
+Your body aches from the long hours spent at your desk combined with a lack of exercise. 
+You work as an accountant for wholesale company and right now, nothing seems duller than this job.
+Your bed is so soft and welcoming that you feel like staying there forever.
+// no gained thought
+ 
+// 1.1.1. get ready for work [-> 2]
+// 1.1.2. close your eyes, just five more minutes [-> 2]
+
+// node 2
+
+
+// node 3
+
+
+// legal terms etc.
+
+favicon : https://fontawesome.com/license
+
+
+
+
+
+
+
+

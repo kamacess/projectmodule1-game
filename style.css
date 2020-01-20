@@ -1,0 +1,76 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: Inconsolata;   
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #363241;
+    color: #9995c4;
+    width: 100vw;
+    height: 100vh;
+}
+
+.container {
+    width: 800px;
+    max-width: 80%;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #423f59;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-grid {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 10 px;
+    margin-top: 20px;
+}
+
+.button {
+    background-color: #4c507b;
+    outline: none;
+    border: #4c507b;
+    margin: 5px;
+    border-radius: 5px;
+    color: #9995c4;
+    width: 100%;
+}
+
+.button:hover {
+    background-color: #6762a8;
+}
+
+/* /* .line-1 {
+    /* position: relative;
+    /* top: 50%;   */
+    width: 100%;
+    /* margin: 0 auto; */
+    /* border-right: 2px solid #6762a8; */
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    transform: translateY(-50%);    
+} */
+
+/* Animation */
+
+@keyframes typewriter {
+    from {width: 0;}
+    to {width: 24em;}
+  }
+  
+  @keyframes blinkTextCursor {
+    from {border-right-color: rgba(255,255,255,.75);}
+    to {border-right-color: transparent;}
+  }
+
+.anim-typewriter {
+  animation: typewriter 4s steps(44) 1s 1 normal both
+}
+ */
