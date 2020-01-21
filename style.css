@@ -12,6 +12,7 @@ body, html {
     color: #9995c4;
     width: 100vw;
     height: 100vh;
+    overflow: hidden;
 }
 
 #title-container {
@@ -41,9 +42,10 @@ body, html {
 
 .btn-grid {
     display: grid;
-    grid-template-columns: repeat(2, auto);
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 10px;
     margin-top: 20px;
+    justify-items: center;
 }
 
 .button {
@@ -54,8 +56,10 @@ body, html {
     border-radius: 5px;
     color: #9995c4;
     width: 100%;
+    padding: 5px;
 }
 
 .button:hover {
     background-color: #6762a8;
 }
+

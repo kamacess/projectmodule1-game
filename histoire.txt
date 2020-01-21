@@ -3,21 +3,18 @@
 
 '1.1a' A pale light creeps through the shaders. option: "..."
 '1.1b' Your body lies between a matress and some sheets. option: "..."
-'1.1c' You are in your bedroom. option: "..."
-'1.1d' Your head rests on a soft but somewhat smelly pillow. option: "..."
+'1.1c' Your head rests on a soft but somewhat smelly pillow. option: "..." / "grunt" / "yawn" / "hum to yourself" + feelHappy
+'1.1d' You are in your bedroom. option: "..."
 '1.1e' It's morning.
        You are waking up.
        options : assess the situation -> '1.2'
-       options : get up, drink a glass of water, do some calithenics, meditate for ten minutes, eat a consistent breakfast, and get ready to go to work. [-> 1.2a]
-
-
-// 1.1. assess the situation [-> 1.1]
-// 1.2. 
-
+       options + feelHappy : get up, drink a glass of water, do some calisthenics, meditate for ten minutes, eat a consistent breakfast, and get ready to go to work. [-> 1.2a]
  
 [1.2a]
-You contemplate the possibility of getting up, drinking a glass of water, then doing some calisthenics, meditating for ten minutes, eating a consistent breakfast and getting reday to go to work. It sounds like a good plan. A great one actually. But you gradually remember that you haven't done your dishes in the last four days, and since you went to bed way too late yesterday in the evening, you have a bare fourty minutes to get ready before being late for work.
-// gain thought: bettering your life [-> 1.1.]
+You contemplate the possibility of getting up, drinking a glass of water, then doing some calisthenics, meditating for ten minutes, eating a consistent breakfast and getting reday to go to work. It sounds like a good plan. A great one actually. But you gradually remember that you haven't done your dishes in the last four days, and since you went to bed way too late yesterday in the evening, you have a bare twenty-sevent minutes to get ready before being late for work.
+// wantsToImprove: true
+
+
  
 [1.1.]
 You feel like a mess.
@@ -31,9 +28,29 @@ Your bed is so soft and welcoming that you feel like staying there forever.
 // 1.1.2. close your eyes, just five more minutes [-> 2]
 
 // node 2
+The morning chill catches you by surprise. 
+The autumn is slowly turning into winter, and you wish you had a better coat to keep you warm on your way to work.
+The streets are busy.
+Something catches your attention.
+Every year, twice a year actually, you have to bear the same sight.
+When the weather changes, people buy themselves new fancy overcoats.
+And a growing proportion seem to be oblivious of the stitched slit.
+No matter how cheap you are, you know that this little x stitches keeping together the two sides of the slit on overcoats has to be cut. But how raised these people? They walk briskly, unaware of the atrocious sight they make everyone endure.
+The sheer thought of it infuriates you.
+Thousands of years in the history of humankind, evolution, technical progress, has made refined tailors think of stitching together the slits of new raincoats and jackets so that they look good in the shop. These honorable persons believe that the end users would think of cutting these, so that the original purpose of the slit, being able to walk freely, shall be accomplished.
+But eveyday in the busy streets of your city, you witness these admirable efforts being trampled.
+Ignored.
+Neglected.
+It makes you want to kill something.
+option: kill something. 
+option: dismiss the thought.
+option: plan on carrying a tiny pair of scissors with you in case of emergency. hasScissors = true
+
 
 
 // node 3
+uneventful day at the office. 
+hasScissors == true => take a pair of scissors
 
 
 // legal terms etc.
