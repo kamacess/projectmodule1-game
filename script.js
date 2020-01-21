@@ -1,10 +1,19 @@
 
+// TODO setTimeout(function(){  }, delay);
+
+
 // application typewriter
-var speed = 75;
+var speed = 50;
 var h1 = document.querySelector('h1');
 var textBlock = document.querySelector('#text');
-var delay = h1.innerHTML.length * speed + speed;
-console.log(textBlock);
+var delay = textBlock.innerHTML.length * speed + speed;
+var allTextTyped = false;
+
+// quelques constantes dans le scope global
+const textElement = document.getElementById('text');
+const optionContainer = document.getElementById('option-buttons');
+let state = {};
+
 
 function typeEffect(element, speed) {
 	var text = element.innerHTML;
@@ -12,25 +21,21 @@ function typeEffect(element, speed) {
 	
 	var i = 0;
 	var timer = setInterval(function() {
+	
+
     if (i < text.length) {
-      element.append(text.charAt(i));
+	  element.append(text.charAt(i));
+	  allTextTyped = false ;
       i++;
     } else {
-      clearInterval(timer);
+	  clearInterval(timer);
+	  allTextTyped = true ;
     }
   }, speed);
+  
 }
 
-// type affect to header
-typeEffect(h1, speed);
-//typeEffect(textBlock, speed);
-
-// fonction pour n'afficher les boutons qu'après l'apparition du 
-
-// quelques constantes dans le scope global
-const textElement = document.getElementById('text');
-const optionContainer = document.getElementById('option-buttons');
-let state = {};
+// fonction pour n'afficher les boutons qu'après l'apparition complète du texte
 
 // fonctions
 function startGame() {
@@ -40,10 +45,13 @@ function startGame() {
 
 function showTextNode(textNodeIndex) {
 	const textNode = textNodes.find((textNode) => textNode.id === textNodeIndex);
-	console.log('je suis dans la fonction showTextNode');
+
+	if (allTextTyped == false) {
+		textElement.innerHTML = "";
+	}
+
 	textElement.innerHTML = textNode.text;
-	
-	
+
 	while (optionContainer.firstChild) {
 		optionContainer.removeChild(optionContainer.firstChild);
 	}
@@ -53,10 +61,15 @@ function showTextNode(textNodeIndex) {
 			const button = document.createElement('button');
 			button.innerText = option.text;
 			button.classList.add('button');
-			button.addEventListener('click', () => selectOption(option));
+
+			button.addEventListener('click', () => {
+				selectOption(option);
+			})
+
 			optionContainer.appendChild(button);
 		}
 	});
+
 	typeEffect(textBlock, speed);
 }
 
@@ -139,10 +152,8 @@ const textNodes = [
 	}
 ];
 
-// exécution du jeu
+// type affect to header
+typeEffect(h1, speed);
+
+// start game
 startGame();
-
-
-
-//
-
