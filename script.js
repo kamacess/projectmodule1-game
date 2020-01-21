@@ -1,38 +1,37 @@
-
-// TODO setTimeout(function(){  }, delay);
-
-
 // application typewriter
-var speed = 50;
+var speed = 40;
 var h1 = document.querySelector('h1');
 var textBlock = document.querySelector('#text');
 var delay = textBlock.innerHTML.length * speed + speed;
-var allTextTyped = false;
+var allTextTyped = true;
 
 // quelques constantes dans le scope global
 const textElement = document.getElementById('text');
 const optionContainer = document.getElementById('option-buttons');
 let state = {};
+let span = document.querySelector('#span');
 
+function typeEffect(id, text, speed) {
 
-function typeEffect(element, speed) {
-	var text = element.innerHTML;
+	allTextTyped = false;
+
+	let element = document.getElementById(id);
 	element.innerHTML = "";
 	
 	var i = 0;
-	var timer = setInterval(function() {
-	
+	var timerId = setInterval(function() {
 
     if (i < text.length) {
 	  element.append(text.charAt(i));
-	  allTextTyped = false ;
       i++;
     } else {
-	  clearInterval(timer);
+	  console.log('End of sentence !')
+	  clearInterval(timerId);
 	  allTextTyped = true ;
+	  optionContainer.style.visibility = 'visible';
     }
   }, speed);
-  
+
 }
 
 // fonction pour n'afficher les boutons qu'après l'apparition complète du texte
@@ -46,31 +45,31 @@ function startGame() {
 function showTextNode(textNodeIndex) {
 	const textNode = textNodes.find((textNode) => textNode.id === textNodeIndex);
 
-	if (allTextTyped == false) {
-		textElement.innerHTML = "";
-	}
-
-	textElement.innerHTML = textNode.text;
-
-	while (optionContainer.firstChild) {
-		optionContainer.removeChild(optionContainer.firstChild);
-	}
+	optionContainer.innerHTML = "";
 
 	textNode.options.forEach((option) => {
+
 		if (showOption(option)) {
+
 			const button = document.createElement('button');
+
 			button.innerText = option.text;
 			button.classList.add('button');
 
 			button.addEventListener('click', () => {
-				selectOption(option);
+				if (allTextTyped) {
+					selectOption(option);
+				}
 			})
 
 			optionContainer.appendChild(button);
 		}
+
 	});
 
-	typeEffect(textBlock, speed);
+	optionContainer.style.visibility = 'hidden';
+
+	typeEffect('text', textNode.text, speed);
 }
 
 function showOption(option) {
@@ -152,8 +151,9 @@ const textNodes = [
 	}
 ];
 
-// type affect to header
-typeEffect(h1, speed);
+// span.addEventListener('click', () => {
+// 	startGame()
+// })
 
 // start game
 startGame();

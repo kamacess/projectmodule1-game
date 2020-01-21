@@ -28,10 +28,10 @@ Your bed is so soft and welcoming that you feel like staying there forever.
 // 1.1.2. close your eyes, just five more minutes [-> 2]
 
 // node 2
-The morning chill catches you by surprise. 
+The morning chill catches you by surprise. // Shiver + isCold // Blow on your fingers + isCold //   
 The autumn is slowly turning into winter, and you wish you had a better coat to keep you warm on your way to work.
 The streets are busy.
-Something catches your attention.
+In the crowd, something catches your attention.
 Every year, twice a year actually, you have to bear the same sight.
 When the weather changes, people buy themselves new fancy overcoats.
 And a growing proportion seem to be oblivious of the stitched slit.
@@ -62,5 +62,33 @@ favicon : https://fontawesome.com/license
 
 
 
+LAST node
+
+{
+		id: 'z1',
+		text: `On your way out of the office, you notice Taylor, chatting with the receptionist.`,
+		options: [
+			{
+				text: `...`,
+				nextText: 'z2'
+			},
+			{
+				text:
+				`Decide to tell Taylor about the slit on their coat and offer tu cut it.`,
+				requiredState: (currentState) => currentState.isHappy === true && currentState.hasScissors === true,
+				nextText: 'z3'
+			}
+		]
+	},
+
+
+
+
+
+options: {
+				text:
+				"You remember that  thing on a Fatboy slim track and hum to yourself.",
+				requiredState: (currentState) => currentState.isHappy === true
+		}
 
 

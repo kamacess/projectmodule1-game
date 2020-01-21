@@ -72,3 +72,15 @@ a:visited {
     color: pink;
     text-decoration: none;
   }
+
+#bdp {
+    font-size: 0.65em;
+    position: fixed;
+    bottom: 5px;
+    right: 5px;
+
+}
+
+#bdp a:visited {
+    color: #9995c4;
+}
