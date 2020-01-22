@@ -78,9 +78,33 @@ a:visited {
     position: fixed;
     bottom: 5px;
     right: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
 
 }
 
 #bdp a:visited {
     color: #9995c4;
+}
+
+#bdp img {
+    width: 20px;
+    margin-right: 5px;
+}
+
+
+.infobulle {
+    cursor: help;
+}
+
+.infobulle:hover::after,
+.infobulle:focus::after {
+  content: attr(aria-label); 
+  position: absolute;
+  top: -2.4em;
+  left: 25px;
+  z-index: 1; 
+  font-size: 1em;
 }

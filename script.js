@@ -9,6 +9,19 @@ var allTextTyped = true;
 const textElement = document.getElementById('text');
 const optionContainer = document.getElementById('option-buttons');
 let state = {};
+const music = new Audio('./assets/Julian_Winter_-_09_-_LA.mp3');
+var player = document.getElementById("player");
+
+// music player
+player.addEventListener('click', () => {
+	if(music.paused){
+	music.play() 
+	console.log(music.played);
+	} else {
+		music.pause()
+		console.log('pause')
+	}
+})
 
 function typeEffect(id, text, speed) {
 
@@ -37,6 +50,7 @@ function typeEffect(id, text, speed) {
 function startGame() {
 	state = {};
 	showTextNode('1');
+	// music.pause();
 }
 
 function showTextNode(textNodeIndex) {
@@ -143,17 +157,48 @@ const textNodes = [
 	},
 	{
 		id: '1d',
-		text: `When the weather changes, people buy themselves new fancy overcoats. And a growing proportion seem to be oblivious of the stitched slit.`,
+		text: `When the weather changes, people buy themselves new fancy overcoats. And a growing proportion seem to be oblivious of...`,
+		options: [
+			{
+				text: `...`,
+				nextText: '1d1'
+			},
+		]
+	},
+
+	{
+		id: '1d1',
+		text: `the stitched slit.`,
+		options: [
+			{
+				text: `...`,
+				nextText: '1d2'
+			},
+			]
+	},
+	{
+		id: '1d2',
+		text: `And the necessity of cutting it right before wearing the new coat.`,
+		options: [
+			{
+				text: `...`,
+				nextText: '1d3'
+			},
+			]
+	},
+	{
+		id: '1d3',
+		text: `And the necessity of cutting it right before wearing the new coat. No matter how cheap you are, you know that this little x-shaped stitches keeping together the two sides of the slit on overcoats and jackets are meant to be cut after purchase. Their sole purpose is to keep the slit from being wrinkled between the factory and the store rack.`,
 		options: [
 			{
 				text: `...`,
 				nextText: '1e'
 			},
-		]
+			]
 	},
 	{
 		id: '1e',
-		text: `No matter how cheap you are, you know that this little x-shaped stitches keeping together the two sides of the slit on overcoats are meant to be cut after purchase. Their sole purpose is to keep the slit from being wrinkled between the factory and the store rack. I mean, who raised these people? They walk briskly, unaware of the atrocious sight they make everyone endure.`,
+		text: `Keeping them longer than than always end up the same way: after a few weeks, the forces on the fabric rip the losely sewn stitches, but not before the coat is irremediably  I mean, who raised these people? They walk briskly, unaware of the atrocious sight they make everyone endure.`,
 		options: [
 			{
 				text: `The sheer thought of it infuriates you`,
@@ -178,7 +223,7 @@ const textNodes = [
 	},
 	{
 		id: '1f',
-		text: `Thousands of years in the history of humankind, evolution, technical progress, have lead refined tailors to think of stitching together the slits of new raincoats and jackets so that they look good in the shop. These honorable persons believe that the end users would think of cutting these, so that the original purpose of the slit, being able to walk freely, shall be accomplished. It should be common knowledge. You actually read online a <a href = "https://www.esquire.com/style/mens-fashion/a26098955/tacking-stitch-coat-jacket-vent-men/" target = "_blank">great piece of journalism</a> about this particular topic. But eveyday in the busy streets of your city, you witness these admirable efforts being trampled.`,
+		text: `Thousands of years in the history of humankind, evolution, technical progress, have lead refined tailors to think of stitching together the slits of new raincoats and jackets so that they look good in the shop. These honorable persons believe that the end users would think of cutting these, so that the original purpose of the slit, being able to walk freely, shall be accomplished. It should be common knowledge. But everyday in the busy streets of your city, you witness these admirable efforts being trampled.`,
 		options: [
 			{
 				text: `Ignored`,
@@ -215,7 +260,7 @@ const textNodes = [
 	},
 	{
 		id: '1ga',
-		text: `Well, you might feel like killing something, but it does not mean you have to. You need to work on those anger management issues there.`,
+		text: `Well, you might feel like killing something, but it does not mean you have to. You do know it won't solve anything, don't you? You need to work on those anger management issues there.`,
 		options: [
 			{
 				text: `Send a text to your therapist`,
@@ -226,7 +271,7 @@ const textNodes = [
 				nextText: '1h'
 			},
 			{
-				text: `Mumble somthing about `,
+				text: `Mumble something about `,
 				nextText: '1h'
 			},
 			{
