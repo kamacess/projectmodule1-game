@@ -1,31 +1,31 @@
 // node 1
 
 
-'1.1a' A pale light creeps through the shaders. option: "..."
-'1.1b' Your body lies between a matress and some sheets. option: "..."
-'1.1c' Your head rests on a soft but somewhat smelly pillow. option: "..." / "grunt" / "yawn" / "hum to yourself" + feelHappy
-'1.1d' You are in your bedroom. option: "..."
-'1.1e' It's morning.
-       You are waking up.
-       options : assess the situation -> '1.2'
-       options + feelHappy : get up, drink a glass of water, do some calisthenics, meditate for ten minutes, eat a consistent breakfast, and get ready to go to work. [-> 1.2a]
- 
-[1.2a]
-You contemplate the possibility of getting up, drinking a glass of water, then doing some calisthenics, meditating for ten minutes, eating a consistent breakfast and getting reday to go to work. It sounds like a good plan. A great one actually. But you gradually remember that you haven't done your dishes in the last four days, and since you went to bed way too late yesterday in the evening, you have a bare twenty-sevent minutes to get ready before being late for work.
-// wantsToImprove: true
-
-
- 
-[1.1.]
-You feel like a mess.
-Your brain feels foggy. 
-Your body aches from the long hours spent at your desk combined with a lack of exercise. 
-You work as an accountant for wholesale company and right now, nothing seems duller than this job.
-Your bed is so soft and welcoming that you feel like staying there forever.
-// no gained thought
- 
-// 1.1.1. get ready for work [-> 2]
-// 1.1.2. close your eyes, just five more minutes [-> 2]
+// '1.1a' A pale light creeps through the shaders. option: "..."
+// '1.1b' Your body lies between a matress and some sheets. option: "..."
+// '1.1c' Your head rests on a soft but somewhat smelly pillow. option: "..." / "grunt" / "yawn" / "hum to yourself" + feelHappy
+// '1.1d' You are in your bedroom. option: "..."
+// '1.1e' It's morning.
+//        You are waking up.
+//        options : assess the situation -> '1.2'
+//        options + feelHappy : get up, drink a glass of water, do some calisthenics, meditate for ten minutes, eat a consistent breakfast, and get ready to go to work. [-> 1.2a]
+//  
+// [1.2a]
+// You contemplate the possibility of getting up, drinking a glass of water, then doing some calisthenics, meditating for ten minutes, eating a consistent breakfast and getting reday to go to work. It sounds like a good plan. A great one actually. But you gradually remember that you haven't done your dishes in the last four days, and since you went to bed way too late yesterday in the evening, you have a bare twenty-sevent minutes to get ready before being late for work.
+// // wantsToImprove: true
+// 
+// 
+//  
+// [1.1.]
+// You feel like a mess.
+// Your brain feels foggy. 
+// Your body aches from the long hours spent at your desk combined with a lack of exercise. 
+// You work as an accountant for wholesale company and right now, nothing seems duller than this job.
+// Your bed is so soft and welcoming that you feel like staying there forever.
+// // no gained thought
+//  
+// // 1.1.1. get ready for work [-> 2]
+// // 1.1.2. close your eyes, just five more minutes [-> 2]
 
 // node 2
 The morning chill catches you by surprise. // Shiver + isCold // Blow on your fingers + isCold //   
@@ -46,6 +46,10 @@ option: kill something.
 option: dismiss the thought.
 option: plan on carrying a tiny pair of scissors with you in case of emergency. hasScissors = true
 
+
+As the flow of your inner monologue carries you to scheming a grand plan to better humankind by adding slit-cutting classes into middle school curriculum, you find yourself in front of your favorite park.
+option : avoid the park, take the shortcut
+option : 
 
 
 // node 3
@@ -82,13 +86,222 @@ LAST node
 	},
 
 
+{
+		id: '1',
+		text: `The morning chill catches you by surprise.`,
+		options: [
+			{
+				text: `...`,
+				nextText: '1a'
+			},
+		]
+	},
+{
+		id: '1a',
+		text: `Autumn is slowly turning into winter, and you wish you had a better coat to keep you warm on your way to work.`,
+		options: [
+			{
+				text: `The streets are busy today`,
+				nextText: '1b'
+			},
+			{
+				text: `People are wrapped in layers of dark fabric`,
+				nextText: '1b'
+			},
+			{
+				text: `The air feels like an icy blade on your cheeks`,
+				nextText: '1b'
+			},
+		]
+	},
+	{
+		id: '1b',
+		text: `In the crowd, something catches your attention.`,
+		options: [
+			{
+				text: `...`,
+				nextText: '1c'
+			},
+			
+		]
+	},
+{
+		id: '1c',
+		text: `Every year, twice a year actually, you have to bear the same sight.`,
+		options: [
+			{
+				text: `You cannot take it anymore`,
+				nextText: '1d'
+			},
+			{
+				text: `You know it is silly to feel offended by that, but you just can't help it.`,
+				nextText: '1d'
+			},
+			{
+				text: `As far as you remember, you have always felt the same way about this matter.`,
+				nextText: '1d'
+			}
+		]
+	},
+	{
+		id: '1d',
+		text: `When the weather changes, people buy themselves new fancy overcoats. And a growing proportion seem to be oblivious of the stitched slit.`,
+		options: [
+			{
+				text: `...`,
+				nextText: '1e'
+			},
+		]
+	},
+	{
+		id: '1e',
+		text: `No matter how cheap you are, you know that this little x-shaped stitches keeping together the two sides of the slit on overcoats are meant to be cut after purchase. Their sole purpose is to keep the slit from being wrinkled between the factory and the store rack. I mean, who raised these people? They walk briskly, unaware of the atrocious sight they make everyone endure.`,
+		options: [
+			{
+				text: `The sheer thought of it infuriates you`
+				nextText: '1f'
+			},
+			{
+				text:
+				`You repress your anger`,
+				nextText: '1f'
+			},
+			{
+				text:
+				`You clench your fists, whitening your knuckles`,
+				nextText: '1f'
+			},
+			{
+				text:
+				`You sigh with exasperation`,
+				nextText: '1f'
+			}
+		]
+	},
+	{
+		id: '1f',
+		text: `Thousands of years in the history of humankind, evolution, technical progress, has made refined tailors think of stitching together the slits of new raincoats and jackets so that they look good in the shop. These honorable persons believe that the end users would think of cutting these, so that the original purpose of the slit, being able to walk freely, shall be accomplished. It should be common knowledge. You actually read online a <a href = "https://www.esquire.com/style/mens-fashion/a26098955/tacking-stitch-coat-jacket-vent-men/" target = "_blank">great piece of journalism</a> about this particular topic. But eveyday in the busy streets of your city, you witness these admirable efforts being trampled.`,
+		options: [
+			{
+				text: `Ignored`,
+				nextText: '1g'
+			},
+			{
+				text: `Neglected`,
+				nextText: '1g'
+			},
+			{
+				text: `Disregarded`,
+				nextText: '1g'
+			}
+		]
+	},
+	{
+		id: '1g',
+		text: `It makes you want to kill something.`,
+		options: [
+			{
+				text: `Kill something`,
+				nextText: '1ga'
+			},
+			{
+				text: `Dismiss the thought`,
+				nextText: '1h'
+			},
+			{
+				text: `Plan on carrying a tiny pair of scissors with you in case of emergency. `,
+				nextText: '1h',
+				setState: { wantScissors: true },
+			},
+		]
+	},
+	{
+		id: '1ga',
+		text: `Well, you might feel like killing something, but it does not mean you have to. You need to work on those anger management issues there.`,
+		options: [
+			{
+				text: `Send a text to your therapist`,
+				nextText: '1h'
+			},
+			{
+				text: `Take a deep breath`,
+				nextText: '1h'
+			},
+			{
+				text: `Mumble somthing about `,
+				nextText: '1h'
+			},
+			{
+				text:
+				`xxx.`,
+				requiredState: (currentState) => currentState.XXX === true && currentState.hasScissors === true,
+				nextText: 'XXXXX'
+			}
+		]
+	},
+	{
+		id: 'XXXX',
+		text: `XXXX.`,
+		options: [
+			{
+				text: `...`,
+				nextText: 'xx'
+			},
+			{
+				text:
+				`xxx.`,
+				requiredState: (currentState) => currentState.XXX === true && currentState.hasScissors === true,
+				nextText: 'XXXXX'
+			}
+		]
+	},
+	{
+		id: 'XXXX',
+		text: `XXXX.`,
+		options: [
+			{
+				text: `...`,
+				nextText: 'xx'
+			},
+			{
+				text:
+				`xxx.`,
+				requiredState: (currentState) => currentState.XXX === true && currentState.hasScissors === true,
+				nextText: 'XXXXX'
+			}
+		]
+	},
+	{
+		id: 'NE PAS ECRIRE COPIER',
+		text: `XXXX.`,
+		options: [
+			{
+				text: `...`,
+				nextText: 'xx'
+			},
+			{
+				text:
+				`xxx.`,
+				requiredState: (currentState) => currentState.XXX === true && currentState.hasScissors === true,
+				nextText: 'XXXXX'
+			}
+		]
+	},
 
 
 
 options: {
 				text:
-				"You remember that  thing on a Fatboy slim track and hum to yourself.",
-				requiredState: (currentState) => currentState.isHappy === true
-		}
+				"You remember that thing on a Fatboy slim track and hum to yourself.",
+				requiredState: (currentState) => currentState.isHappy === true,
+                nextText: 'z4'
+		},
+        {
+                text: ``,
+                requiredState: (currentState) => currentState.XXXXXXXX === true,
+                nextText: ''
+        }
+
+
 
 
