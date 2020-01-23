@@ -46,19 +46,24 @@ function typeEffect(id, text, speed) {
 }
 
 // fonctions
+
+// lancer le jeu (réinitialiser l'état + montrer le 1er textnode)
 function startGame() {
 	state = {};
 	showTextNode('1');
-	// music.pause();
 }
+
+
+// fonction qui va chercher le textnode à afficher, afficher ou non les boutons
 
 function showTextNode(textNodeIndex) {
 	const textNode = textNodes.find((textNode) => textNode.id === textNodeIndex);
 
+	document.getElementById('img-container').style.display = "none";
 	optionContainer.innerHTML = "";
 
 	textNode.options.forEach((option) => {
-
+		
 		if (showOption(option)) {
 
 			const button = document.createElement('button');
@@ -77,15 +82,24 @@ function showTextNode(textNodeIndex) {
 
 	});
 
+	// Image
+	if(textNode.hasOwnProperty("displayImg")){
+		document.getElementById('img-container').style.display = "block";
+	}
+
 	optionContainer.style.visibility = 'hidden';
 
 	typeEffect('text', textNode.text, speed);
 }
 
+
+// fonction qui montre les options en fonction de l'état
 function showOption(option) {
 	return option.requiredState == null || option.requiredState(state);
 }
 
+
+// fonction qui permet de restart le jeu, assigner le state + appeler les textnodes
 function selectOption(option) {
 	const nextTextNodeId = option.nextText;
 	if (nextTextNodeId <= 0) {
@@ -97,7 +111,7 @@ function selectOption(option) {
 
 // LE TEXTE
 const textNodes = [
-	{
+	{	
 		id: '1',
 		text: `The morning chill catches you by surprise.`,
 		options: [
@@ -171,13 +185,23 @@ const textNodes = [
 		options: [
 			{
 				text: `...`,
+				nextText: '1d2a'
+			},
+			]
+	},
+	{	id:'1d2a',
+		text: `This little thingy.`,
+		displayImg : true,
+		options: [
+			{
+				text: `...`,
 				nextText: '1d2'
 			},
 			]
 	},
 	{
 		id: '1d2',
-		text: `And the necessity of cutting it right before wearing the new coat.`,
+		text: `And the necessity of cutting the thread right before wearing the new coat.`,
 		options: [
 			{
 				text: `...`,
@@ -188,6 +212,7 @@ const textNodes = [
 	{
 		id: '1d3',
 		text: `No matter how cheap you are, you know that this little x-shaped stitches keeping together the two sides of the slit on overcoats and jackets are meant to be cut after purchase. Their sole purpose is to keep the slit from being wrinkled between the factory and the store rack.`,
+		
 		options: [
 			{
 				text: `...`,

@@ -22,14 +22,56 @@ body, html {
 }
 
 .container {
-    display: flex;
     width: 800px;
     max-width: 80%;
     padding: 10px;
-    border-radius: 5px;
     background-color: #423f59;
     margin: 0 auto 0;
 }
+
+.typewriter,
+.container,
+.btn-grid {
+    display: flex;
+}
+
+.typewriter {
+    flex-direction: column;
+}
+
+.container,
+.button,
+    {
+    border-radius: 10px;
+}
+
+/* THE IMAGE*/
+
+#img-container {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#img-container img {
+    width: 150px;
+}
+
+.scale-in-center {
+	animation: scale-in-center 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@keyframes scale-in-center {
+    0% {
+      transform: scale(0);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  /*LE TEXTE*/
 
 #text {
     max-width: 800px;
@@ -39,8 +81,9 @@ body, html {
    
 }
 
+  /*LES BOUTONS*/
+
 .btn-grid { /* which is actually not a grid*/
-    display: flex;
     margin-top: 20px;
     justify-items: center;
     flex-wrap: wrap;
@@ -53,7 +96,6 @@ body, html {
     outline: none;
     border: #4c507b;
     margin: 5px;
-    border-radius: 5px;
     color: #9995c4;
     width: 40%;
     padding: 5px;
@@ -62,6 +104,8 @@ body, html {
 .button:hover {
     background-color: #6762a8;
 }
+
+  /* LES LIENS */
 
 a {
     text-decoration: none;
@@ -73,16 +117,17 @@ a:visited {
     text-decoration: none;
   }
 
+
+  /*LE FOUTEUR*/
 #bdp {
-    font-size: 0.65em;
+    font-size: 0.65rem;
     position: fixed;
     bottom: 5px;
     right: 5px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: baseline;
+}
 
+#bdp div {
+    width: fit-content;
 }
 
 #bdp a:visited {
@@ -94,6 +139,7 @@ a:visited {
     margin-right: 5px;
 }
 
+/* infobulle musique */
 
 .infobulle {
     cursor: help;
@@ -102,9 +148,7 @@ a:visited {
 .infobulle:hover::after,
 .infobulle:focus::after {
   content: attr(aria-label); 
-  position: absolute;
-  top: -2.4em;
-  left: 25px;
   z-index: 1; 
-  font-size: 1em;
+  font-size: 0.65rem;
 }
+
