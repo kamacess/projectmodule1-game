@@ -9,7 +9,7 @@ var allTextTyped = true;
 const textElement = document.getElementById('text');
 const optionContainer = document.getElementById('option-buttons');
 let state = {};
-const music = new Audio('./assets/Julian_Winter_-_09_-_LA.mp3');
+const music = new Audio('./assets/julian_winter_loop.mp3');
 var player = document.getElementById("player");
 
 // music player
@@ -37,7 +37,6 @@ function typeEffect(id, text, speed) {
 	  element.append(text.charAt(i));
       i++;
     } else {
-	  console.log('End of sentence !')
 	  clearInterval(timerId);
 	  allTextTyped = true ;
 	  optionContainer.style.visibility = 'visible';
@@ -188,7 +187,7 @@ const textNodes = [
 	},
 	{
 		id: '1d3',
-		text: `And the necessity of cutting it right before wearing the new coat. No matter how cheap you are, you know that this little x-shaped stitches keeping together the two sides of the slit on overcoats and jackets are meant to be cut after purchase. Their sole purpose is to keep the slit from being wrinkled between the factory and the store rack.`,
+		text: `No matter how cheap you are, you know that this little x-shaped stitches keeping together the two sides of the slit on overcoats and jackets are meant to be cut after purchase. Their sole purpose is to keep the slit from being wrinkled between the factory and the store rack.`,
 		options: [
 			{
 				text: `...`,
