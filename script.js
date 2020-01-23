@@ -222,32 +222,75 @@ const textNodes = [
 	},
 	{
 		id: '1e',
-		text: `Keeping them longer than than always end up the same way: after a few weeks, the forces on the fabric rip the losely sewn stitches, but not before the coat is irremediably  I mean, who raised these people? They walk briskly, unaware of the atrocious sight they make everyone endure.`,
+		text: `Keeping them longer than that always ends up the same way: after a few weeks, the forces they put on the fabric by merely walking rip the losely sewn stitches, but not before the coat is irremediably damaged.`,
 		options: [
 			{
 				text: `The sheer thought of it infuriates you`,
-				nextText: '1f'
+				nextText: '1ea'
 			},
 			{
 				text:
 				`You repress your anger`,
-				nextText: '1f'
+				nextText: '1ea'
 			},
 			{
 				text:
 				`You clench your fists, whitening your knuckles`,
-				nextText: '1f'
+				nextText: '1ea'
 			},
 			{
 				text:
 				`You sigh with exasperation`,
-				nextText: '1f'
+				nextText: '1ea'
 			}
 		]
 	},
 	{
+		id: '1ea',
+		text: `And the worst part: at the bottom of the finally free vent remains a little piece of thread that hangs there forever.`,
+		options: [
+			{
+				text: `...`,
+				nextText: '1f'
+			},
+			{
+				text: `... well...`,
+				nextText: '1f'
+			},
+			{
+				text: `...`,
+				nextText: '1f'
+			},
+			{
+				text: `I mean...`,
+				nextText: '1f'
+			},
+		]
+	},
+	{
 		id: '1f',
-		text: `Thousands of years in the history of humankind, evolution, technical progress, have lead refined tailors to think of stitching together the slits of new raincoats and jackets so that they look good in the shop. These honorable persons believe that the end users would think of cutting these, so that the original purpose of the slit, being able to walk freely, shall be accomplished. It should be common knowledge. But everyday in the busy streets of your city, you witness these admirable efforts being trampled.`,
+		text: `Thousands of years in the history of humankind, evolution, technical progress, have lead refined tailors to think of stitching together the two sides of the vents on new raincoats and jackets so that they look good in the shop.`,
+		options: [
+			{
+				text: `...`,
+				nextText: '1fb'
+			},
+		]
+	},
+	{
+		id: '1fb',
+		text: `These honorable workers believe that the end users would think of cutting these, so that the original purpose of the slit, being able to walk freely, wrapped in a fitting piece of clothing, shall be accomplished.`,
+		options: [
+			{
+				text: `...`,
+				nextText: '1fa'
+			},
+		]
+	},
+
+	{
+		id: '1fa',
+		text: `It should be common knowledge. But everyday in the busy streets of your city, you witness these admirable efforts being trampled.`,
 		options: [
 			{
 				text: `Ignored`,
@@ -276,7 +319,7 @@ const textNodes = [
 				nextText: '1h'
 			},
 			{
-				text: `Plan on carrying a tiny pair of scissors with you in case of emergency. `,
+				text: `Plan on carrying a tiny pair of scissors with you in case of emergency `,
 				nextText: '1h',
 				setState: { wantScissors: true }
 			},
@@ -284,7 +327,17 @@ const textNodes = [
 	},
 	{
 		id: '1ga',
-		text: `Well, you might feel like killing something, but it does not mean you have to. You do know it won't solve anything, don't you? You need to work on those anger management issues there.`,
+		text: `Wait, let's be real for a minute, because you feel like killing something does not mean you have to. `,
+		options: [
+			{
+				text: `Mumble something about violence in today's society`,
+				nextText: '1gb'
+			},
+		]
+	},
+	{
+		id: '1gb',
+		text: `You do know it won't solve anything, don't you? You need to work on those anger management issues there.`,
 		options: [
 			{
 				text: `Send a text to your therapist`,
@@ -295,15 +348,75 @@ const textNodes = [
 				nextText: '1h'
 			},
 			{
-				text: `Mumble something about `,
-				nextText: '1h'
+				text: `...`,
+				nextText: 'xx'
+			},
+		]
+	},
+	{
+		id: '1h',
+		text: `As the flow of your inner monologue carries you to scheming a grand plan to better humankind by adding slit-cutting classes into middle school curriculum, you find yourself in front of your favorite park.`,
+		options: [
+			{
+				text: `You take a look at your watch`,
+				nextText: '1i'
+			},
+			
+		]
+	},
+	{
+		id: '1i',
+		text: `So far, you are right on time for work. Going through the park would make you lose a few minutes.`,
+		options: [
+			{
+				text: `You don't want to risk being late, you resume your walk in the streets immediately`,
+				nextText: '1j',
 			},
 			{
-				text:
-				`xxx.`,
-				requiredState: (currentState) => currentState.XXX === true && currentState.hasScissors === true,
-				nextText: 'XXXXX'
+				text: `You could use some nature in your life right now. But you will be ten minutes late`,
+				nextText: '1k',
+				setState: { isHappy: true }
+			},
+			{
+				text: `Just stand there at the gates for a moment, and inhale some fresh air`,
+				nextText: '1l',
+				setState: { isHappy: true }
+			},
+			{
+				text: `You actually wanted to be early today. You hurry to work`,
+				nextText: '1j'
 			}
+		]
+	},
+
+	{
+		id: '1j',
+		text: `Twenty minutes later, you sit behind your desk, between two of the most boring people you know.`,
+		options: [
+			{
+				text: `It's just another bleak day at work`,
+				nextText: '1m'
+			},
+		]
+	},
+	{
+		id: '1k',
+		text: `You arrive a bit late, but no one has noticed. You enjoyed every step of this little walk. You feel surprinsingly at peace with yourself.`,
+		options: [
+			{
+				text: `Today might actually be a good day`,
+				nextText: '1m'
+			},
+		]
+	},
+	{
+		id: '1l',
+		text: `Just taking a few moments to look at the trees has done you a world of good.`,
+		options: [
+			{
+				text: `You feel ready to work`,
+				nextText: '1m'
+			},
 		]
 	},
 

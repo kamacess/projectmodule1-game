@@ -235,12 +235,70 @@ LAST node
 				text:
 				`xxx.`,
 				requiredState: (currentState) => currentState.XXX === true && currentState.hasScissors === true,
+				setState: { isHappy: true },
 				nextText: 'XXXXX'
 			}
 		]
 	},
+
+
 	{
-		id: 'XXXX',
+		id: '1i',
+		text: `So far, you are right on time for work. Going through the park would make you lose a few minutes.`,
+		options: [
+			{
+				text: `You don't want to risk being late, you resume your walk in the streets immediately`,
+				nextText: '1j',
+			},
+			{
+				text: `You could use some nature in your life right now. But you will be ten minutes late`,
+				nextText: '1k',
+				setState: { isHappy: true }
+			},
+			{
+				text: `Just stand there at the gates for a moment, and inhale some fresh air`,
+				nextText: '1l',
+				setState: { isHappy: true }
+			},
+			{
+				text: `You actually wanted to be early today. You hurry to work`,
+				nextText: '1j'
+			}
+		]
+	},
+
+	{
+		id: '1j',
+		text: `Twenty minutes later, you sit behind your desk, between two of the most boring people you know.`,
+		options: [
+			{
+				text: `It's just another bleak day at work`,
+				nextText: '1m'
+			},
+		]
+	},
+	{
+		id: '1k',
+		text: `You arrive a bit late, but no one has noticed. You enjoyed every step of this little walk. You feel surprinsingly at peace with yourself.`,
+		options: [
+			{
+				text: `Today might actually be a good day`,
+				nextText: '1m'
+			},
+		]
+	},
+	{
+		id: '1l',
+		text: `Just taking a few moments to look at the trees has done you a world of good.`,
+		options: [
+			{
+				text: `You feel ready to work`,
+				nextText: '1m'
+			},
+		]
+	},
+	{
+		id: '1m',
 		text: `XXXX.`,
 		options: [
 			{
@@ -256,7 +314,23 @@ LAST node
 		]
 	},
 	{
-		id: 'XXXX',
+		id: 'NE PAS ECRIRE COPIER',
+		text: `XXXX.`,
+		options: [
+			{
+				text: `...`,
+				nextText: 'xx'
+			},
+			{
+				text:
+				`xxx.`,
+				requiredState: (currentState) => currentState.XXX === true && currentState.hasScissors === true,
+				nextText: 'XXXXX'
+			}
+		]
+	},
+	{
+		id: 'NE PAS ECRIRE COPIER',
 		text: `XXXX.`,
 		options: [
 			{
