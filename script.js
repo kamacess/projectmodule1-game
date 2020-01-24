@@ -4,6 +4,8 @@ var h1 = document.querySelector('h1');
 var textBlock = document.querySelector('#text');
 var delay = textBlock.innerHTML.length * speed + speed;
 var allTextTyped = true;
+var faster = document.getElementById('faster');
+var slower = document.getElementById('slower');
 
 // quelques constantes dans le scope global
 const textElement = document.getElementById('text');
@@ -23,6 +25,9 @@ player.addEventListener('click', () => {
 	}
 })
 
+
+// effet machine à écrire
+
 function typeEffect(id, text, speed) {
 
 	allTextTyped = false;
@@ -40,10 +45,21 @@ function typeEffect(id, text, speed) {
 	  clearInterval(timerId);
 	  allTextTyped = true ;
 	  optionContainer.style.visibility = 'visible';
-    }
+	}
+	
   }, speed);
 
 }
+
+// rapidification machine à écrire
+faster.addEventListener('click', () => {
+	speed -= 10 ;
+})
+
+slower.addEventListener('click', () => {
+	speed += 10 ;
+})
+
 
 // fonctions
 

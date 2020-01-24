@@ -18,11 +18,12 @@ body, html {
 #title-container {
     width: 100%;
     text-align: center;
-    margin-bottom: 100px;
+    margin-bottom: 125px;
+    font-size: 1.65rem;
 }
 
 .container {
-    width: 800px;
+    width: 1100px;
     max-width: 80%;
     padding: 10px;
     background-color: #423f59;
@@ -57,7 +58,7 @@ body, html {
 }
 
 .scale-in-center {
-	animation: scale-in-center 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	animation: scale-in-center 2.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
 @keyframes scale-in-center {
@@ -78,6 +79,7 @@ body, html {
     margin: auto;
     padding: 15px;
     text-align: center;
+    font-size: 1.5rem;
    
 }
 
@@ -95,10 +97,11 @@ body, html {
     background-color: #4c507b;
     outline: none;
     border: #4c507b;
-    margin: 5px;
+    margin: 0.75rem;
     color: #9995c4;
     width: 40%;
-    padding: 5px;
+    padding: 0.75rem;
+    font-size: 1.25rem;
 }
 
 .button:hover {
@@ -124,7 +127,7 @@ a:visited {
 
 
 #bdp {
-    font-size: 0.65rem;
+    font-size: 0.95rem;
     position: fixed;
     bottom: 5px;
     right: 5px;
@@ -142,7 +145,7 @@ a:visited {
 }
 
 #bdp img {
-    width: 15px;
+    width: 20px;
     margin-right: 5px;
 }
 
@@ -156,6 +159,9 @@ a:visited {
 .infobulle:focus::after {
   content: attr(aria-label); 
   z-index: 1; 
-  font-size: 0.65rem;
+  font-size: 0.85rem;
+  position: absolute;
+  top: -20px;
+  left: 15px;
 }
 
