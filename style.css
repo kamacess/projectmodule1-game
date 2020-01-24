@@ -54,7 +54,7 @@ body, html {
 }
 
 #img-container img {
-    width: 150px;
+    width: 200px;
 }
 
 .scale-in-center {
@@ -123,8 +123,6 @@ a:visited {
     color: pink;
     text-decoration: none;
   }
-
-
 
 #bdp {
     font-size: 0.95rem;
