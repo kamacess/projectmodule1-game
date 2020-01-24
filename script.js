@@ -442,7 +442,7 @@ const textNodes = [
 		options: [
 			{
 				text: `You feel ready to work`,
-				nextText: '1m'
+				nextText: '2'
 			},
 		]
 	},
