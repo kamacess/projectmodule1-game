@@ -56,6 +56,7 @@ faster.addEventListener('click', () => {
 	speed -= 10 ;
 })
 
+// lentification machine à écrire
 slower.addEventListener('click', () => {
 	speed += 10 ;
 })
@@ -127,8 +128,18 @@ function selectOption(option) {
 
 // LE TEXTE
 const textNodes = [
-	{	
+	{
 		id: '1',
+		text: `ACT 1`,
+		options: [
+			{
+				text: `***`,
+				nextText: '10'
+			},
+		]
+	},
+	{	
+		id: '10',
 		text: `The morning chill catches you by surprise.`,
 		options: [
 			{
@@ -137,7 +148,7 @@ const textNodes = [
 			},
 		]
 	},
-{
+	{
 		id: '1a',
 		text: `Autumn is slowly turning into winter, and you wish you had a better coat to keep you warm on your way to work.`,
 		options: [
@@ -266,15 +277,15 @@ const textNodes = [
 		text: `And the worst part: at the bottom of the finally free vent remains a little piece of thread that hangs there forever.`,
 		options: [
 			{
+				text: `erf...`,
+				nextText: '1f'
+			},
+			{
 				text: `...`,
 				nextText: '1f'
 			},
 			{
 				text: `... well...`,
-				nextText: '1f'
-			},
-			{
-				text: `...`,
 				nextText: '1f'
 			},
 			{
@@ -432,6 +443,217 @@ const textNodes = [
 			{
 				text: `You feel ready to work`,
 				nextText: '1m'
+			},
+		]
+	},
+	{
+		id: '2',
+		text: `ACT 2`,
+		options: [
+			{
+				text: `***`,
+				nextText: '2a'
+			},
+			
+		]
+	},
+	{
+		id: '2a',
+		text: `"What a day!", you think, as you turn off your computer.`,
+		options: [
+			{
+				text: `You take a moment to reflect on everything that happened during last few hours at the office`,
+				nextText: '2b'
+			},
+			{
+				text: `You take some time to tidy your desk before the weekdend`,
+				requiredState: (currentState) => currentState.wantScissors === true,
+				nextText: '2d'
+			},
+			{
+				text: `You sit back in your chair, gathering your forces before going home`,
+				nextText: '2b'
+			},
+		]
+	},
+	{
+		id: '2b',
+		text: `Thoughts rush through your mind.`,
+		options: [
+			{
+				text: `The hour-long meeting with the future clients...`,
+				nextText: '2c'
+			},
+			{
+				text: `The outrageous uncut vents you passed on your way to work...`,
+				nextText: '2d'
+			},
+			{
+				text: `The terrible lasagna they served at lunch...`,
+				nextText: '2c'
+			},
+			{
+				text: `This desk is so messy...`,
+				nextText: '2d'
+			},
+		]
+	},
+	{
+		id: '2c',
+		text: `You feel really tired.`,
+		options: [
+			{
+				text: `You could keep brooding for hours`,
+				requiredState: (currentState) => currentState.isHappy === false,
+				nextText: '2e'
+			},
+			{
+				text: `Like really, really tired`,
+				requiredState: (currentState) => currentState.isHappy === false,
+				nextText: '2e'
+			},
+			{
+				text: `You could keep brooding for hours`,
+				requiredState: (currentState) => currentState.isHappy === false,
+				nextText: '2e'
+			},
+			{
+				text: `What's the point of all this?`,
+				requiredState: (currentState) => currentState.isHappy === false,
+				nextText: '2e'
+			}, 
+			{
+				text: `Time to wrap this up!`,
+				requiredState: (currentState) => currentState.isHappy === true,
+				nextText: '2e'
+			}, 
+			{
+				text: `Through the window, you witness the sky blushing because of the setting sun`,
+				requiredState: (currentState) => currentState.isHappy === true,
+				nextText: '2e'
+			}, 
+			{
+				text: `You're so glad it's friday`,
+				requiredState: (currentState) => currentState.isHappy === true,
+				nextText: '2e'
+			}, 
+		]
+	},
+		{
+		id: '2d',
+		text: `Your eyes land on the pen holder. Inside, a pair of scissors.`,
+		options: [
+			{
+				text: `Hey, it could come in handy. You pocket it`,
+				nextText: '2e',
+				setState: { hasScissors: true },
+			},
+			{
+				text: `You are a grown up, you don't need to carry scissors around with you`,
+				nextText: '2e',
+				setState: {wantScissors: false},
+			}
+		]
+	},
+	{
+		id: '2e',
+		text: `On your way out of the office, you notice Taylor, chatting with the receptionist.`,
+		options: [
+			{
+				text: `...`,
+				setState: {hasScissors: true, wantScissors: false} ,
+				nextText: '2f'
+			},
+		]
+	},
+		{
+		id: '2f',
+		text: `Taylor wears a long dark slick black woolen coat.`,
+		options: [
+			{
+				text: `You start thinking of something`,
+				nextText: '2g'
+			},
+		]
+	},
+		
+
+{
+		id: '2g',
+		text: `You take some time to think`,
+		options: [
+			{
+				text: `Silently hate Taylor`,
+				nextText: 'z2'
+			},
+			{
+				text:
+				`Casually greet and tell Taylor about their stitched vent issue.`,
+				requiredState: (currentState) => currentState.isHappy,
+				nextText: 'z3'
+			},
+				{
+				text:
+				`Sneak behind Taylor and discretly cut the thread.`,
+				requiredState: (currentState) => currentState.hasScissors,
+				nextText: 'z4'
+			},
+				{
+				text:
+				`Awkwardly tell Taylor about their slit.`,
+				nextText: 'z5'
+			},
+		]
+	},
+
+{
+		id: 'z2',
+		text: `You pass Taylor and the receptionist, giving them a slient nod`,
+		options: [
+			{
+				text: `You disappear in the night`,
+				nextText: '-1'
+			},
+		]
+	},
+
+	{
+		id: 'z3',
+		text: `"Oh thank you, I totally forgot about it!", answers Taylor, before asking the receptionist for a pair of scissors.
+		Taylor beams at you. `,
+		options: [
+			{
+				text: `You have made a friend for life.`,
+				nextText: '-1'
+			},
+		]
+	},
+	{
+		id: 'z4',
+		text: `You crouch behind Taylor and the desk, scissors in hand. In a swift and silent motion, you cut the thread.`,
+		options: [
+			{
+				text: `You feel great`,
+				nextText: '-1'
+			},
+			{
+				text: `Your life now has a purpose`,
+				nextText: '-1'
+			},
+			{
+				text: `From now on, you will refer to yourself as "Super Slit Cutter"`,
+				nextText: '-1'
+			},
+		]
+	},
+	{
+		id: 'z5',
+		text: `Taylor and the receptionist look at you quizzically as you try explaining vents on coats and thread and fabric.
+		But after a pause, Taylor laughs and thank you.`,
+		options: [
+			{
+				text: `Today, you've made the world a slightly better place`,
+				nextText: '-1'
 			},
 		]
 	},
