@@ -422,7 +422,7 @@ const textNodes = [
 		options: [
 			{
 				text: `It's just another bleak day at work`,
-				nextText: '1m'
+				nextText: '2'
 			},
 		]
 	},
@@ -432,7 +432,7 @@ const textNodes = [
 		options: [
 			{
 				text: `Today might actually be a good day`,
-				nextText: '1m'
+				nextText: '2'
 			},
 		]
 	},
